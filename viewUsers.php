@@ -9,7 +9,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Profile</title>
+	<title>Wish List</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
  	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -30,6 +30,7 @@
 <body class=>
 
 	<h2 align="center">View Other Users' Wish Lists<h2>
+	<hr>
 
 <?php
 							$sql= "SELECT * FROM user order by Username";

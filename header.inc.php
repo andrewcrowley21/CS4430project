@@ -17,9 +17,9 @@
 
                          if($isLogIN){
 							echo '<li><a href="profile.php"><span class="glyphicon glyphicon-user"></span> Profile</a></li>';
-							echo '<li><a href="items.php"><span class="glyphicon glyphicon-star"></span> Items</a></li>';
+							echo '<li><a href="catalog.php"><span class="glyphicon glyphicon-star"></span> Items</a></li>';
 							echo '<li><a href="viewUsers.php"><span class="glyphicon glyphicon-eye-open"></span> View Other Wish Lists</a></li>';
-                            echo '<li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span>Log Out</a></li>';
+                            echo '<li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>';
                            
                         } 
 

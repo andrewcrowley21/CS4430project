@@ -50,7 +50,7 @@
 			$foundEmail = false;
 
 
-			$sql = "SELECT Count(Username) AS userCount FROM User WHERE UserName = ? ";
+			$sql = "SELECT Count(Username) AS userCount FROM user WHERE UserName = ? ";
 
 			$stmt = $pdo->prepare($sql);
 
@@ -65,7 +65,7 @@
 				}
 			}
 
-			$sql = "SELECT Count(Email) AS emailCount FROM User WHERE Email = ?";
+			$sql = "SELECT Count(Email) AS emailCount FROM user WHERE Email = ?";
 
 			$stmt = $pdo->prepare($sql);
 

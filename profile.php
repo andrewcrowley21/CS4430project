@@ -29,7 +29,7 @@
 
 				$userID = $_SESSION['userID'];
 
-				$sql = "SELECT * FROM User WHERE UID = ?";
+				$sql = "SELECT * FROM user WHERE UID = ?";
 
 				$stmt = $pdo->prepare($sql);
 
@@ -51,7 +51,7 @@
 
 				$userID = $_GET['UID'];
 
-				$sql = "SELECT * FROM User WHERE UID = ?";
+				$sql = "SELECT * FROM user WHERE UID = ?";
 
 				$stmt = $pdo->prepare($sql);
 
@@ -75,7 +75,7 @@
 
 				$userID = $_SESSION['userID'];
 
-				$sql = "SELECT * FROM User WHERE UID = ?";
+				$sql = "SELECT * FROM user WHERE UID = ?";
 
 				$stmt = $pdo->prepare($sql);
 
