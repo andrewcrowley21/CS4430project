@@ -46,7 +46,19 @@
 	//GOTO http://www.phpmyadmin.co AND SIGN IN USING THOSE CREDENTIALS TO ACCESS DATABASE PHPMYADMIN
 	// Use this for learnig how to call, the pg is postgres, not mysql. https://www.w3schools.com/php/php_mysql_intro.asp
 	//class is boring, got a working test file. See you at 6:20ish
-
+	$con=mysqli_connect("sql9.freemysqlhosting.net","sql9268464","Et55h2EG5e","sql9268464");
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+$result = mysqli_query($con,"SELECT * FROM catalog");
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+         echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Price: " . $row["price"]. " - Description: " .  $row["description"] . " - Link:" .  $row["link"] . " Imgpath: ". $row["imgpath"] . " Type:" . $row["type"] . "<br>";
+}}
+$con->close();
 
 
 	?>
