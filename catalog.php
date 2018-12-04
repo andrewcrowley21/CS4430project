@@ -44,7 +44,7 @@
 	//if (!$conn) {
 		//echo("Connection failed: We Ded" );
 	//GOTO http://www.phpmyadmin.co AND SIGN IN USING THOSE CREDENTIALS TO ACCESS DATABASE PHPMYADMIN
-
+	// Use this for learnig how to call, the pg is postgres, not mysql. https://www.w3schools.com/php/php_mysql_intro.asp
 
 
 
