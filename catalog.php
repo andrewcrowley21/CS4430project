@@ -31,6 +31,28 @@
 
 	<h2 align="center">View Our Catalog<h2>
 	
+<<<<<<< HEAD
+=======
+
+	<?php 
+	//$servername = "sql9.freemysqlhosting.net";
+	//$username = "sql9268464";
+	//$password = "Et55h2EG5e";
+	//$dbname = "sql9268464";
+
+	// Create connection
+	//$conn = pg_connect("host=sql9.freemysqlhosting.net port=3306 dbname=sql9268464 user=sql9268464 password=Et55h2EG5e");
+	// Check connection
+	//if (!$conn) {
+		//echo("Connection failed: We Ded" );
+	//GOTO http://www.phpmyadmin.co AND SIGN IN USING THOSE CREDENTIALS TO ACCESS DATABASE PHPMYADMIN
+	// Use this for learnig how to call, the pg is postgres, not mysql. https://www.w3schools.com/php/php_mysql_intro.asp
+	//class is boring, got a working test file. See you at 6:20ish
+
+
+
+	?>
+>>>>>>> parent of 26b7e79... Update catalog.php
 	
 </body>
 </html>
