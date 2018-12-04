@@ -102,7 +102,7 @@
 
 					$uid;
 
-					$sql = "SELECT MAX(UID) AS max FROM User";
+					$sql = "SELECT MAX(UID) AS max FROM user";
 
 					$stmt = $pdo->prepare($sql);
 
@@ -119,7 +119,7 @@
 					$time = $date->getTimestamp();
 
 
-					$sql = "INSERT INTO User(UID,Username,Password,Email,DateOfRegistration,FirstName,LastName) VALUES(?,?,?,?,?,?,?)";
+					$sql = "INSERT INTO user(UID,Username,Password,Email,DateOfRegistration,FirstName,LastName) VALUES(?,?,?,?,?,?,?)";
 				
 					$stmt= $pdo->prepare($sql);
 

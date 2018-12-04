@@ -243,7 +243,7 @@
 
 			if($_POST['update'] ==1){ ///////////////////////////////////////////////////////////////////update
 
-				$sql= "SELECT * FROM User WHERE UID = ?";
+				$sql= "SELECT * FROM user WHERE UID = ?";
 
 				$stmt = $pdo->prepare($sql);
 
@@ -332,7 +332,7 @@
 			}
 			else{ //update db
 
-				$sql = "UPDATE User SET Username = ?, FirstName = ?, LastName = ?, Password = ? WHERE UID =?";
+				$sql = "UPDATE user SET Username = ?, FirstName = ?, LastName = ?, Password = ? WHERE UID =?";
 
 				$stmt = $pdo->prepare($sql);
 

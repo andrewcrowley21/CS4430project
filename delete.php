@@ -23,7 +23,7 @@
 		deleteFromWishList($id, false);
 
 
-		$sql = "DELETE FROM User WHERE UID = ?";
+		$sql = "DELETE FROM user WHERE UID = ?";
 
 		$stmt = $GLOBALS['pdo']->prepare($sql);
 
