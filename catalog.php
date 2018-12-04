@@ -43,6 +43,7 @@
 	// Check connection
 	//if (!$conn) {
 		//echo("Connection failed: We Ded" );
+	//GOTO http://www.phpmyadmin.co AND SIGN IN USING THOSE CREDENTIALS TO ACCESS DATABASE PHPMYADMIN
 
 
 
