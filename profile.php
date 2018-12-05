@@ -108,7 +108,7 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     
-    
+    <link rel="stylesheet" type="text/css" href="css/table.css">
     <link rel="stylesheet" href="css/bootstrap-theme.css" />
     <link rel="stylesheet" href="css/captions.css" />
     <link rel="stylesheet" type="text/css" href="css/profileCSS.css">
@@ -146,47 +146,62 @@
 									<img src="" title="">
 						';
 
-						$i = 0;
+						echo '
+							<section>
 							
-							//echo $i%3;
-
-							//echo "this is i before: " . $i;
-
-							/*$sql= "SELECT * FROM Image WHERE UID = ?";
+							<div class="tbl-header">
+								<table cellpadding="0" cellspacing="0" border="0">
+									<thead>
+										<tr>
+											
+											<th>Name</th>
+											<th>Type</th>
+											<th>Price</th>
+											<th>Description</th>
+											<th>Link</th>
+											<th>Picture</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+								</table>
+							</div>';
+							$sql= "SELECT * FROM catalog where type = 'Graphics card'";
 
 							$stmt = $pdo->prepare($sql);
 
-							$stmt->bindValue(1,$userID);
+							
 
 							$stmt->execute();
 
 							$result = $stmt->fetchAll();
+							
+							
+							
 
-							//echo count($result);
-
+							
+							echo '<div class="tbl-content">
+										<table cellpadding="0" cellspacing="0" border="0">
+											<tbody>';
 
 							for($i =0; $i<count($result); $i++){
-
-								if( $i%2 ==0){
-									//echo '<div class="row">';
-								}
-
-								echo '<div class="gallery col-lg-6">
-  										<a href="imagedetail.php?image='.$result[$i]['ImageID'].'">
-    										<img src="'.$result[$i]['Path'].'" alt="'.$result[$i]['Title'].'" width="300" height="300" title="'.$result[$i]['Title'].'">
- 										 </a>
- 										 <hr>
- 									   </div>';	
-
-								if( (($i%2) !=0) and ($i != 0) ){
-
-									echo "</br>";
-								} 
-
-								//echo "i = " . $i;
-
-	
-							}*/
+								
+								echo '
+												<tr>
+													
+													<td>'. $result[$i]['name'] .'</td>
+													<td>'. $result[$i]['type'] .'</td>
+													<td>$'. $result[$i]['price'] .'</td>
+													<td>'. $result[$i]['description'] .'</td>
+													<td><a href="'. $result[$i]['link'] .'"><strong>Check it out</strong></a></td>
+													<td><img src="'. $result[$i]['imgpath'] .'" height="15%" width="60%"></td>
+													<td><a href="#"><strong>Remove from Wish List</a></td>
+												</tr>';
+							}
+							
+							echo ' 			</tbody>
+										</table>
+								</div>
+								</section>';
 
 							echo '</div>
 

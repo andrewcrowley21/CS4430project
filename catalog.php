@@ -77,6 +77,7 @@
 											<tbody>';
 
 							for($i =0; $i<count($result); $i++){
+								
 								echo '
 												<tr>
 													<td>'. $i .'</td>
@@ -84,7 +85,7 @@
 													
 													<td>$'. $result[$i]['price'] .'</td>
 													<td>'. $result[$i]['description'] .'</td>
-													<td><a href="'. $result[$i]['link'] .'"target = "_blank" "><strong>Check it out</strong></a></td>
+													<td><a href="'. $result[$i]['link'] .'"><strong>Check it out</strong></a></td>
 													<td><img src="'. $result[$i]['imgpath'] .'" height="15%" width="60%"></td>
 													<td><a href="#"><strong>Add to Wish List</a></td>
 												</tr>';
