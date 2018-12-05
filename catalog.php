@@ -86,9 +86,15 @@
 													<td>$'. $result[$i]['price'] .'</td>
 													<td>'. $result[$i]['description'] .'</td>
 													<td><a href="'. $result[$i]['link'] .'"target = _blank""><strong>Check it out</strong></a></td>
-													<td><img src="'. $result[$i]['imgpath'] .'" height="15%" width="60%"></td>
-													<td><a href="#"><strong>Add to Wish List</a></td>
-												</tr>';
+													<td><img src="'. $result[$i]['imgpath'] .'" height="15%" width="60%"></td>';
+													if(!isset($_SESSION['userID'])) {
+														echo '<td><a href="login.php"><strong>Add to Wish List</a></td>';
+													}
+													else {
+														echo '<td><a href="#"><strong>Add to Wish List</a></td>';
+													}
+													
+												echo '</tr>';
 							}
 							
 							echo ' 			</tbody>
