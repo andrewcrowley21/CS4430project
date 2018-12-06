@@ -3,19 +3,19 @@ include "required.php";
 include "redirect.php";
 
 
+	$IID = $_POST['IID'];
+	$UID = $_POST['UID'];
 
-	echo "Test";
 
+  $sql = "INSERT INTO user_items_connect (`UID`,`ItemID`) VALUES (?,?)";
 
-  $sql = "INSERT INTO user_items_connect (`UID`,`ItemID`) VALUES ($userID,?)";
-
-  $stmt = $GLOBALS['pdo']->prepare($sql);
-
-  $stmt->bindValue(3,$IID);
+  $stmt= $pdo->prepare($sql);
+ $stmt->bindValue(1,$UID);
+  $stmt->bindValue(2,$IID);
 
   $stmt->execute();
 
-  redirect(catalog.php);
+  redirect('catalog.php');
 
 
 
