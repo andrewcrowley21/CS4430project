@@ -8,6 +8,10 @@ function addToWishList($IID){
 
 >>>>>>> parent of 59ec49c... Update add.php
 
+
+	echo "Test";
+
+
   $sql = "INSERT INTO user_items_connect (`UID`,`ItemID`) VALUES ($userID,?)";
 
   $stmt = $GLOBALS['pdo']->prepare($sql);
