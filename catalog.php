@@ -2,7 +2,7 @@
 	include 'required.php';
 	include 'redirect.php';
 	include 'header.inc.php';
-	
+
 	?>
 
 <!DOCTYPE html>
@@ -15,8 +15,8 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    
-    
+
+
     <link rel="stylesheet" href="css/bootstrap-theme.css" />
     <link rel="stylesheet" href="css/captions.css" />
     <link rel="stylesheet" type="text/css" href="css/profileCSS.css">
@@ -25,7 +25,7 @@
 
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-       
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body class=>
@@ -36,9 +36,9 @@
 	<h4 style="display: inline; margin: 10px;"><a href="#cpu">CPU's</a></h4>
 	<h4 style="display: inline; margin: 10px;"><a href="#coolers">Cooling Units</a></h4>
 	<h4 style="display: inline; margin: 10px;"><a href="#motherboards">Motherboards</a></h4>
-	
+
 	<?php
-	
+
 							echo '
 							<section>
 							<h2 id="graphics" align="center">Graphics Cards</h2>
@@ -48,7 +48,7 @@
 										<tr>
 											<th>Number</th>
 											<th>Name</th>
-											
+
 											<th>Price</th>
 											<th>Description</th>
 											<th>Link</th>
@@ -62,41 +62,42 @@
 
 							$stmt = $pdo->prepare($sql);
 
-							
+
 
 							$stmt->execute();
 
 							$result = $stmt->fetchAll();
-							
-							
-							
 
-							
+
+
+
+
 							echo '<div class="tbl-content">
 										<table cellpadding="0" cellspacing="0" border="0">
 											<tbody>';
 
 							for($i =0; $i<count($result); $i++){
-								
+
 								echo '
 												<tr>
 													<td>'. $i .'</td>
 													<td>'. $result[$i]['name'] .'</td>
-													
+
 													<td>$'. $result[$i]['price'] .'</td>
 													<td>'. $result[$i]['description'] .'</td>
 													<td><a href="'. $result[$i]['link'] .'"target = _blank""><strong>Check it out</strong></a></td>
 													<td><img src="'. $result[$i]['imgpath'] .'" height="15%" width="60%"></td>
-													<td><a href="#"><strong>Add to Wish List</a></td>
+													<form action="add.php" method="post"><input type="hidden" id="IID"  value="'.$result[$i]['id'].'">
+													<td><button type="submit"><strong>Add to Wish List</strong></button></td></form>
 												</tr>';
 							}
-							
+
 							echo ' 			</tbody>
 										</table>
 								</div>
 								</section>';
-								
-								
+
+
 								echo '
 							<section>
 							<h2 id="cpu" align="center">CPU\'s</h2>
@@ -106,7 +107,7 @@
 										<tr>
 											<th>Number</th>
 											<th>Name</th>
-											
+
 											<th>Price</th>
 											<th>Description</th>
 											<th>Link</th>
@@ -120,16 +121,16 @@
 
 							$stmt = $pdo->prepare($sql);
 
-							
+
 
 							$stmt->execute();
 
 							$result = $stmt->fetchAll();
-							
-							
-							
 
-							
+
+
+
+
 							echo '<div class="tbl-content">
 										<table cellpadding="0" cellspacing="0" border="0">
 											<tbody>';
@@ -139,7 +140,7 @@
 												<tr>
 													<td>'. $i .'</td>
 													<td>'. $result[$i]['name'] .'</td>
-													
+
 													<td>$'. $result[$i]['price'] .'</td>
 													<td>'. $result[$i]['description'] .'</td>
 													<td><a href="'. $result[$i]['link'] .'"target = _blank""><strong>Check it out</strong></a></td>
@@ -147,13 +148,13 @@
 													<td><a href="#"><strong>Add to Wish List</a></td>
 												</tr>';
 							}
-							
+
 							echo ' 			</tbody>
 										</table>
 								</div>
 								</section>';
-								
-								
+
+
 								echo '
 							<section>
 							<h2 id="coolers" align="center">Cooling Units</h2>
@@ -163,7 +164,7 @@
 										<tr>
 											<th>Number</th>
 											<th>Name</th>
-											
+
 											<th>Price</th>
 											<th>Description</th>
 											<th>Link</th>
@@ -177,16 +178,16 @@
 
 							$stmt = $pdo->prepare($sql);
 
-							
+
 
 							$stmt->execute();
 
 							$result = $stmt->fetchAll();
-							
-							
-							
 
-							
+
+
+
+
 							echo '<div class="tbl-content">
 										<table cellpadding="0" cellspacing="0" border="0">
 											<tbody>';
@@ -196,7 +197,7 @@
 												<tr>
 													<td>'. $i .'</td>
 													<td>'. $result[$i]['name'] .'</td>
-													
+
 													<td>$'. $result[$i]['price'] .'</td>
 													<td>'. $result[$i]['description'] .'</td>
 													<td><a href="'. $result[$i]['link'] .'"target = _blank""><strong>Check it out</strong></a></td>
@@ -204,14 +205,14 @@
 													<td><a href="#"><strong>Add to Wish List</a></td>
 												</tr>';
 							}
-							
+
 							echo ' 			</tbody>
 										</table>
 								</div>
 								</section>';
-								
-								
-								
+
+
+
 								echo '
 							<section>
 							<h2 id="motherboards" align="center">Motherboards</h2>
@@ -221,7 +222,7 @@
 										<tr>
 											<th>Number</th>
 											<th>Name</th>
-											
+
 											<th>Price</th>
 											<th>Description</th>
 											<th>Link</th>
@@ -235,16 +236,16 @@
 
 							$stmt = $pdo->prepare($sql);
 
-							
+
 
 							$stmt->execute();
 
 							$result = $stmt->fetchAll();
-							
-							
-							
 
-							
+
+
+
+
 							echo '<div class="tbl-content">
 										<table cellpadding="0" cellspacing="0" border="0">
 											<tbody>';
@@ -254,7 +255,7 @@
 												<tr>
 													<td>'. $i .'</td>
 													<td>'. $result[$i]['name'] .'</td>
-													
+
 													<td>$'. $result[$i]['price'] .'</td>
 													<td>'. $result[$i]['description'] .'</td>
 													<td><a href="'. $result[$i]['link'] .'"target = _blank""><strong>Check it out</strong></a></td>
@@ -262,14 +263,14 @@
 													<td><a href="#"><strong>Add to Wish List</a></td>
 												</tr>';
 							}
-							
+
 							echo ' 			</tbody>
 										</table>
 								</div>
 								</section>';
-	
+
 	?>
-	
-	
+
+
 </body>
 </html>

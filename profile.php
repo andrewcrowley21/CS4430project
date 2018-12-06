@@ -38,7 +38,7 @@
 				$stmt->execute();
 
 				while($row = $stmt->fetch()){
-					$userName=$row['Username']; 
+					$userName=$row['Username'];
 					$first = $row['FirstName'];
 					$last = $row['LastName'];
 					$date = explode(" ",$row['DateOfRegistration']);
@@ -60,7 +60,7 @@
 				$stmt->execute();
 
 				while($row = $stmt->fetch()){
-					$userName=$row['Username']; 
+					$userName=$row['Username'];
 					$first = $row['FirstName'];
 					$last = $row['LastName'];
 					$date = explode(" ",$row['DateOfRegistration']);
@@ -69,7 +69,7 @@
 			}
 		}
 
-		else{// click profile button or just logged in 
+		else{// click profile button or just logged in
 
 				$isMine = true;
 
@@ -84,7 +84,7 @@
 				$stmt->execute();
 
 				while($row = $stmt->fetch()){
-					$userName=$row['Username']; 
+					$userName=$row['Username'];
 					$first = $row['FirstName'];
 					$last = $row['LastName'];
 					$date = explode(" ",$row['DateOfRegistration']);
@@ -107,7 +107,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    
+
     <link rel="stylesheet" type="text/css" href="css/table.css">
     <link rel="stylesheet" href="css/bootstrap-theme.css" />
     <link rel="stylesheet" href="css/captions.css" />
@@ -116,7 +116,7 @@
 
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-       
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body class=>
@@ -138,7 +138,7 @@
 
 							<div class="container">
 
-								
+
 
 								<div class="tab-content" >
 									<div id="Uploads" class="tab-pane fade in active">
@@ -148,12 +148,12 @@
 
 						echo '
 							<section>
-							
+
 							<div class="tbl-header">
 								<table cellpadding="0" cellspacing="0" border="0">
 									<thead>
 										<tr>
-											
+
 											<th>Name</th>
 											<th>Type</th>
 											<th>Price</th>
@@ -165,39 +165,40 @@
 									</thead>
 								</table>
 							</div>';
-							$sql= "SELECT * FROM catalog where type = 'Graphics card'";
+							$sql= "SELECT * FROM user_items_connect where UID = $userID";
 
 							$stmt = $pdo->prepare($sql);
 
-							
+
 
 							$stmt->execute();
 
 							$result = $stmt->fetchAll();
-							
-							
-							
 
-							
+
+
+
+
 							echo '<div class="tbl-content">
 										<table cellpadding="0" cellspacing="0" border="0">
 											<tbody>';
 
 							for($i =0; $i<count($result); $i++){
-								
+
 								echo '
 												<tr>
-													
+
 													<td>'. $result[$i]['name'] .'</td>
 													<td>'. $result[$i]['type'] .'</td>
 													<td>$'. $result[$i]['price'] .'</td>
 													<td>'. $result[$i]['description'] .'</td>
 													<td><a href="'. $result[$i]['link'] .'"><strong>Check it out</strong></a></td>
 													<td><img src="'. $result[$i]['imgpath'] .'" height="15%" width="60%"></td>
-													<td><a href="#"><strong>Remove from Wish List</a></td>
+													<form action="remove.php" method="post"><input type="hidden" id="IID"  value="'.$result[$i]['id'].'">
+													<td><button type="submit"><strong>Remove from Wish List</strong></button></td></form>
 												</tr>';
 							}
-							
+
 							echo ' 			</tbody>
 										</table>
 								</div>
@@ -205,12 +206,12 @@
 
 							echo '</div>
 
-					
-					
+
+
 				</div>
-				
+
 			</div>
-			
+
 		</div>
 
 		<div class="col-lg-2">
@@ -230,11 +231,11 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 
-		
-		
+
+
 	</div>
 ';
 
@@ -249,7 +250,7 @@
 
 							<div class="container">
 
-								
+
 
 								<div class="tab-content" >
 									<div id="Uploads" class="tab-pane fade in active">
@@ -287,7 +288,7 @@
     										<img src="'.$result[$i]['Path'].'" alt="'.$result[$i]['Title'].'" width="300" height="300" title="'.$result[$i]['Title'].'">
  										 </a>
  										 <hr>
- 									   </div>';	
+ 									   </div>';
 
 								if( (($i%2) !=0) and ($i != 0) ){
 
@@ -296,17 +297,17 @@
 
 								//echo "i = " . $i;
 
-	
+
 							}*/
 
 							echo '</div>
 
-					
-					
+
+
 				</div>
-				
+
 			</div>
-			
+
 		</div>
 
 		<div class="col-lg-2">
@@ -323,11 +324,11 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 
-		
-		
+
+
 	</div>
 ';
 
@@ -346,8 +347,8 @@
 
 		}
 	?>
-						
-					
+
+
 	<?php
  		//FOOTER
 
@@ -357,7 +358,7 @@
 
 
 
-	
+
 
 
 
