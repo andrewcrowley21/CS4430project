@@ -11,8 +11,6 @@ function addToWishList($IID){
 
   $stmt->execute();
 
-
-
 }
 
 function redirect() {

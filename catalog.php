@@ -91,7 +91,9 @@
 														echo '<td><a href="login.php"><strong>Add to Wish List</a></td>';
 													}
 													else {
-														echo '<td><a href="#"><strong>Add to Wish List</a></td>';
+														echo '
+														<form action="add.php" method="post"><input type="hidden" id="IID"  value="'.$result[$i]['id'].'">
+													<td><button type="submit"><strong>Add to Wish List</strong></button></td></form>';
 													}
 
 												echo '</tr>';
@@ -154,7 +156,8 @@
 														echo '<td><a href="login.php"><strong>Add to Wish List</a></td>';
 													}
 													else {
-														echo '<td><a href="#"><strong>Add to Wish List</a></td>';
+														echo '<form action="add.php" method="post"><input type="hidden" id="IID"  value="'.$result[$i]['id'].'">
+													<td><button type="submit"><strong>Add to Wish List</strong></button></td></form>';
 													}
 
 												echo '</tr>';
@@ -217,7 +220,8 @@
 														echo '<td><a href="login.php"><strong>Add to Wish List</a></td>';
 													}
 													else {
-														echo '<td><a href="#"><strong>Add to Wish List</a></td>';
+														echo '<form action="add.php" method="post"><input type="hidden" id="IID"  value="'.$result[$i]['id'].'">
+													<td><button type="submit"><strong>Add to Wish List</strong></button></td></form>';
 													}
 
 												echo '</tr>';
@@ -281,7 +285,8 @@
 														echo '<td><a href="login.php"><strong>Add to Wish List</a></td>';
 													}
 													else {
-														echo '<td><a href="#"><strong>Add to Wish List</a></td>';
+														echo '<form action="add.php" method="post"><input type="hidden" id="IID"  value="'.$result[$i]['id'].'">
+													<td><button type="submit"><strong>Add to Wish List</strong></button></td></form>';
 													}
 
 												echo '</tr>';
