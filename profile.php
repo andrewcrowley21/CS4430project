@@ -134,7 +134,7 @@
 
 				echo '<div class="row container-fluid">
 
-						<div class="col-lg-9">
+						<div class="col-lg-9" style="position:relative; float:left;">
 
 							<div class="container">
 
@@ -165,7 +165,8 @@
 									</thead>
 								</table>
 							</div>';
-							$sql= "SELECT * FROM user_items_connect where UID = $userID";
+							$sql= "SELECT * FROM `user_items_connect`, `user`, `catalog` where catalog.id = user_items_connect.ItemID
+							AND user.UID = user_items_connect.UID and user_items_connect.UID = '" . $userID . "'";
 
 							$stmt = $pdo->prepare($sql);
 
@@ -214,9 +215,9 @@
 
 		</div>
 
-		<div class="col-lg-2">
+		<div class="col-lg-2" style="position:relative; float:right;">
 
-			<div class="container-fluid">
+			<div class="container-fluid" >
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						Profile Information
@@ -246,7 +247,7 @@
 				echo '<h2 align="center">' . $userName . '\'s Wish List</h2>';
 				echo '<div class="row container-fluid">
 
-						<div class="col-lg-9">
+						<div class="col-lg-9" style="position:relative; float:left;">
 
 							<div class="container">
 
@@ -258,47 +259,63 @@
 									<img src="" title="">
 						';
 
-						$i = 0;
+						echo '
+							<section>
 
-							//echo $i%3;
+							<div class="tbl-header">
+								<table cellpadding="0" cellspacing="0" border="0">
+									<thead>
+										<tr>
 
-							//echo "this is i before: " . $i;
+											<th>Name</th>
+											<th>Type</th>
+											<th>Price</th>
+											<th>Description</th>
+											<th>Link</th>
+											<th>Picture</th>
 
-							/*$sql= "SELECT * FROM Image WHERE UID = ?";
+										</tr>
+									</thead>
+								</table>
+							</div>';
+							$sql= "SELECT * FROM `user_items_connect`, `user`, `catalog` where catalog.id = user_items_connect.ItemID
+							AND user.UID = user_items_connect.UID and user_items_connect.UID = '" . $userID . "'";
 
 							$stmt = $pdo->prepare($sql);
 
-							$stmt->bindValue(1,$userID);
+
 
 							$stmt->execute();
 
 							$result = $stmt->fetchAll();
 
-							//echo count($result);
 
+
+
+
+							echo '<div class="tbl-content">
+										<table cellpadding="0" cellspacing="0" border="0">
+											<tbody>';
 
 							for($i =0; $i<count($result); $i++){
 
-								if( $i%2 ==0){
-									//echo '<div class="row">';
-								}
+								echo '
+												<tr>
 
-								echo '<div class="gallery col-lg-6">
-  										<a href="imagedetial.php?image='.$result[$i]['ImageID'].'">
-    										<img src="'.$result[$i]['Path'].'" alt="'.$result[$i]['Title'].'" width="300" height="300" title="'.$result[$i]['Title'].'">
- 										 </a>
- 										 <hr>
- 									   </div>';
+													<td>'. $result[$i]['name'] .'</td>
+													<td>'. $result[$i]['type'] .'</td>
+													<td>$'. $result[$i]['price'] .'</td>
+													<td>'. $result[$i]['description'] .'</td>
+													<td><a href="'. $result[$i]['link'] .'"><strong>Check it out</strong></a></td>
+													<td><img src="'. $result[$i]['imgpath'] .'" height="15%" width="60%"></td>
 
-								if( (($i%2) !=0) and ($i != 0) ){
+												</tr>';
+							}
 
-									echo "</br>";
-								}
-
-								//echo "i = " . $i;
-
-
-							}*/
+							echo ' 			</tbody>
+										</table>
+								</div>
+								</section>';
 
 							echo '</div>
 
@@ -310,7 +327,7 @@
 
 		</div>
 
-		<div class="col-lg-2">
+		<div class="col-lg-2" style="position:relative; float:right;">
 
 			<div class="container-fluid">
 				<div class="panel panel-default">

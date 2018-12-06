@@ -24,8 +24,10 @@
                         } 
 
                          else{
-                            echo '<li><a href="login.php"><span class="glyphicon glyphicon-log-out"></span>Log In</a></li>';
+                            echo '<li><a href="catalog.php"><span class="glyphicon glyphicon-star"></span> Items</a></li>';
                             echo '<li><a href="viewUsers.php"><span class="glyphicon glyphicon-eye-open"></span> View Other Wish Lists</a></li>';
+                            echo '<li><a href="login.php"><span class="glyphicon glyphicon-log-out"></span>Log In</a></li>';
+
                         } 
 
 
