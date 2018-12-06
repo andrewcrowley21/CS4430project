@@ -25,3 +25,5 @@ You should be able to just create 2 different php files, have them execute the s
 If you just copy the top part of each page (the php code with all of the includes) you should be fine. 
 
 If you have any questions about this please text us or email us.
+
+Peter here: I edited the database file to get rid of those blocks
