@@ -5,6 +5,7 @@ include "redirect.php";
 
 	$IID = $_POST['IID'];
 	$UID = $_POST['UID'];
+	$alreadyAdded = false;
 	
 	
 	$sql= "SELECT * FROM `user_items_connect`, `user`, `catalog` where catalog.id = user_items_connect.ItemID
@@ -21,13 +22,15 @@ include "redirect.php";
 							for($i =0; $i<count($result); $i++){
 								if ($result[$i]['ItemID'] = $IID) {
 									echo '<h3>This item is already in your wish list. Please return to the <a href="catalog.php">catalog page</a> to browse for other options.</h3>';
+									$alreadyAdded = true;
 								}
 							}
 							
 							
-							
-
-
+	}
+	
+	
+if ($alreadyAdded = false) {
   $sql = "INSERT INTO user_items_connect (`UID`,`ItemID`) VALUES (?,?)";
 
   $stmt= $pdo->prepare($sql);
@@ -37,6 +40,8 @@ include "redirect.php";
   $stmt->execute();
 
   redirect('catalog.php');
+  
+	}
 
 
 
