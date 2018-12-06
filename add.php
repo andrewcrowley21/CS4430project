@@ -2,7 +2,9 @@
 include "required.php";
 include "redirect.php";
 
-function addToWishList($IID){
+
+
+	echo "Test";
 
 
   $sql = "INSERT INTO user_items_connect (`UID`,`ItemID`) VALUES ($userID,?)";
@@ -15,6 +17,6 @@ function addToWishList($IID){
 
   redirect(catalog.php);
 
-}
+
 
 ?>
