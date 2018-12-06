@@ -195,7 +195,8 @@
 													<td>'. $result[$i]['description'] .'</td>
 													<td><a href="'. $result[$i]['link'] .'"><strong>Check it out</strong></a></td>
 													<td><img src="'. $result[$i]['imgpath'] .'" height="15%" width="60%"></td>
-													<form action="remove.php" method="post"><input type="hidden" id="IID"  value="'.$result[$i]['id'].'">
+													<form action="remove.php" method="post"><input type="hidden" id="IID" name = "IID" value="'.$result[$i]['id'].'">
+													<input type = "hidden" name = "UID" value = "'.$_SESSION['userID'].'">
 													<td><button type="submit"><strong>Remove from Wish List</strong></button></td></form>
 												</tr>';
 							}

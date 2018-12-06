@@ -2,6 +2,11 @@
 include "required.php";
 include "redirect.php";
 
+<<<<<<< HEAD
+=======
+function addToWishList($IID){
+
+>>>>>>> parent of 59ec49c... Update add.php
 
 	$IID = $_POST['IID'];
 	$UID = $_POST['UID'];
@@ -17,6 +22,6 @@ include "redirect.php";
 
   redirect('catalog.php');
 
-
+}
 
 ?>
