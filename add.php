@@ -2,6 +2,11 @@
 include "required.php";
 include "redirect.php";
 
+<<<<<<< HEAD
+=======
+function addToWishList($IID){
+
+>>>>>>> parent of 59ec49c... Update add.php
 
   $sql = "INSERT INTO user_items_connect (`UID`,`ItemID`) VALUES ($userID,?)";
 
@@ -13,6 +18,6 @@ include "redirect.php";
 
   redirect(catalog.php);
 
-
+}
 
 ?>
