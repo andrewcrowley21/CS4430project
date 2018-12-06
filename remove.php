@@ -6,7 +6,7 @@ include "redirect.php";
 	$IID = $_POST['IID'];
 
 
-  $sql = "DELETE FROM user_items_connect WHERE UID = ? & ItemID = ?";
+  $sql = "DELETE FROM user_items_connect WHERE UID = ? AND ItemID = ?";
 
   $stmt = $pdo->prepare($sql);
 
