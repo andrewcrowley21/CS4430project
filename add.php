@@ -1,4 +1,6 @@
 <?php
+include "required.php";
+include "redirect.php";
 
 function addToWishList($IID){
 
@@ -11,11 +13,8 @@ function addToWishList($IID){
 
   $stmt->execute();
 
-}
+  redirect(catalog.php);
 
-function redirect() {
-  header('Location:catalog.php');
-  die();
 }
 
 ?>

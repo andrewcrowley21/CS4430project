@@ -1,10 +1,10 @@
 <?php
+include "redirect.php";
 session_start();
 if (!$_SESSION['userID']) {
-  header('Location:login.php');
-  die();
+  redirect('login.php');
+
 }
-header('Location:profile.php');
-die();
+redirect('profile.php');
 
 ?>

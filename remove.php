@@ -1,4 +1,6 @@
 <?php
+include "required.php";
+include "redirect.php";
 
 function removeFromWishList($IID){
 
@@ -11,8 +13,7 @@ function removeFromWishList($IID){
 
   $stmt->execute();
 
-  header('Location:profile.php');
-  die();
+  redirect(profile.php);
 
 }
 
