@@ -27,7 +27,7 @@ include "redirect.php";
 							}
 							
 							
-	}
+	
 	
 	
 if ($alreadyAdded = false) {
